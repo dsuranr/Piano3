@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+  
+  .piano{
+      display: flex;
+  }
+  
+
+ .tecla{
+     border:1px solid black;
+     width: 50px;
+     height: 200px;
+     display: flex;
+     justify-content: center;
+ }
+
+ .sostenido{
+     height: 120px;
+     width: 40px;
+     background-color: black;
+     color: blanchedalmond;
+     margin-left: -20px;
+     margin-right: -20px;
+
+
+
+ }
+</style>
+<body>
+    
+    <div class="piano">
+    
+    <!--  -->
+
+    
+    <div class="tecla" onclick="reproducir('c')";>c</div>
+    <div class="tecla sostenido" onclick="reproducir('cs')";>c#</div>
+    <div class="tecla" onclick="reproducir('d')";>d</div>
+    <div class="tecla sostenido" onclick="reproducir('ds')";>d#</div>
+    <div class="tecla" onclick="reproducir('e')";>e</div>
+    <div class="tecla" onclick="reproducir('f')";>f</div>
+    <div class="tecla sostenido" onclick="reproducir('fs')";>f#</div>
+    <div class="tecla" onclick="reproducir('g')";>g</div>
+    <div class="tecla sostenido" onclick="reproducir('gs')";>g#</div>
+    <div class="tecla" onclick="reproducir('a')";>a</div>
+    <div class="tecla sostenido" onclick="reproducir('as')";>a#</div>
+    <div class="tecla" onclick="reproducir('b')";>b</div>
+
+    <!--   
+    
+    
+     -->
+</div>
+
+    
+    <audio id="audio-a" controls src="a.wav" type="audio/wav"></audio>
+    <audio id="audio-as" controls src="as.wav" type="audio/wav"></audio>
+    <audio id="audio-b" controls src="b.wav" type="audio/wav"></audio>
+    
+    <audio id="audio-c" controls src="c.wav" type="audio/wav"></audio>
+    <audio id="audio-cs" controls src="cs.wav" type="audio/wav"></audio>
+    <audio id="audio-d" controls src="d.wav" type="audio/wav"></audio>
+    <audio id="audio-ds" controls src="ds.wav" type="audio/wav"></audio>
+    <audio id="audio-e" controls src="e.wav" type="audio/wav"></audio>
+    <audio id="audio-f" controls src="f.wav" type="audio/wav"></audio>
+    <audio id="audio-fs" controls src="fs.wav" type="audio/wav"></audio>
+    <audio id="audio-g" controls src="g.wav" type="audio/wav"></audio>
+    <audio id="audio-gs" controls src="gs.wav" type="audio/wav"></audio>
+
+
+    <script>
+        function reproducir(nota){
+            const idDelElemento = `audio-${nota}`;
+            console.log('idElemento',idDelElemento);
+            document.getElementById(idDelElemento).play();
+        }
+    
+    </script>
+</body>
+</html>
